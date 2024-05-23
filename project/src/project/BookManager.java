@@ -9,11 +9,11 @@ public class BookManager {
 		books = new HashMap<>();
 	}
 	
-	public void addBook(String id, String name, String author, int price) {
+	public void addBook(String id, String name, String author, int year) {
 		if (books.containsKey(id)) {
 			throw new IllegalArgumentException("Books already contain id " + id);
 		}
-		books.put(id, new Book(id, name, author, price));
+		books.put(id, new Book(id, name, author, year));
 	}
 	
 	public Book searchBook(String id) {
@@ -29,4 +29,5 @@ public class BookManager {
 		}
 		books.remove(id);
 	}
+	
 }
